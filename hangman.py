@@ -2,6 +2,7 @@ import random
 from hangman_sll import LinkedList
 
 def add_to_high_scores(name,score):
+    '''Arcade style scoring system, one user can enter multiple scores.'''
     high_sc = open("high_scores.txt","a")
     high_sc.write(name+": "+str(score)+"\n")
     high_sc.close()
