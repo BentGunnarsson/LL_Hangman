@@ -62,6 +62,7 @@ while play == True:
         print("Amount of guesses left: "+str(guesses))
 
         while True:
+            #runs forever until you guess something original
             guess = input("Your guess: ")
             if guess not in already_guessed:
                 already_guessed.append(guess)
