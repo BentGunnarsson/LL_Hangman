@@ -106,10 +106,12 @@ while play == True:
         if addname == "y":
             name = input("Enter your name: ")
             add_to_high_scores(name, total_score)
+            print("The name "+name+" with the score of "+str(total_score)+" has been added!")
         addword = input("Would you like to make a word contribution to the collection of words? (y/n) ")
         if addword == "y":
             word = input("Enter word: ")
             add_word_to_bank(word)
+            print("The word "+word+" has been added to the ever growing list of words. Thanks for the contribution!\n")
 
         print("Thanks for playing!\n")
         print("High scores:")
