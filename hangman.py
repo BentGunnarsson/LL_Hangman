@@ -48,6 +48,7 @@ while play == True:
     print(word_sll)
     print("Good luck!")
 
+    already_guessed = []
     score = 100
     while guesses != 0:
         if word_sll.check_win_con():
@@ -59,7 +60,14 @@ while play == True:
             break
 
         print("Amount of guesses left: "+str(guesses))
-        guess = input("Your guess: ")
+
+        while True:
+            guess = input("Your guess: ")
+            if guess not in already_guessed:
+                already_guessed.append(guess)
+                break
+            print("Hmm, you already guessed that.")
+
 
         if len(guess) > 1:
             if guess == random_word:
