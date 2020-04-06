@@ -1,20 +1,20 @@
 import random
 from hangman_sll import LinkedList
 
-def add_to_high_scores(name,score):
+def add_to_high_scores(name, score):
     '''Arcade style scoring system, one user can enter multiple scores.'''
     high_sc = open("high_scores.txt","a")
     high_sc.write(name+": "+str(score)+"\n")
     high_sc.close()
 
 def open_word_bank():
-    word_bank = []
+    word_b = []
     words = open("words.txt","r")
     for line in words:
         line = line.strip()
-        word_bank.append(line)
+        word_b.append(line)
     words.close()
-    return word_bank
+    return word_b
 
 def display_high_scores():
     high_sc = open("high_scores.txt","r")
@@ -53,8 +53,7 @@ while play == True:
     score = 100
     while guesses != 0:
         if word_sll.check_win_con():
-            print()
-            print("Congratulations! You win.")
+            print("\nCongratulations! You win.")
             scores.append(score)
             wins += 1
             total_score += score
@@ -117,6 +116,7 @@ while play == True:
             name = input("Enter your name: ")
             add_to_high_scores(name, total_score)
             print("The name "+name+" with the score of "+str(total_score)+" has been added!")
+
         addword = input("Would you like to make a word contribution to the collection of words? (y/n) ")
         if addword == "y":
             word = input("Enter word: ")

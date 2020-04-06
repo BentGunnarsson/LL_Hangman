@@ -3,7 +3,7 @@ class Node:
         self.data = data
         self.next = nexd
         if data == " ":
-            self.found = True
+            self.found = True # Not gonna have the players guessing for spaces
         else:
             self.found = found
 
@@ -21,6 +21,8 @@ class LinkedList:
         self.tail = new_node
 
     def find(self, char):
+        '''Checks for a character in the word. Returns True if it is found
+        and False if not. Also toggles self.found'''
         curr = self.head
         ret_val = False
         while curr != None:
@@ -34,6 +36,7 @@ class LinkedList:
             return False
 
     def check_win_con(self):
+        '''Checks for win conditions, that is if all characters have been found.'''
         curr = self.head
         while curr != None:
             if curr.found == False:
@@ -42,6 +45,7 @@ class LinkedList:
         return True
 
     def __str__(self):
+        '''Prints the word but only found characters are displayed. The others appear as dashes.'''
         return_str = ""
         node = self.head
         while node != None:
